@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>How to turn emojis into icons</title>
+</head>
+<body>
+
+<div id="324201">
+<article>
+<h2>How to turn emojis into icons</h2>
+<p>Granted there are many online resources (both free and paid) for icons, we still should be able to use the one style of symbols we already have and are uber familiar with — emojis — as icons.
+</p>
+
+<p>Icons are shapes, typically, made of a single color block. This can be achieved with emojis using <code>text-shadow</code>!
+</p>
+
+<pre><code>.icon {
+  color: transparent;
+  text-shadow: 0 0 black;
+}</code></pre>
+
+<p>Check out a Codepen demo <a title="https://codepen.io/rpsthecoder/full/rKrMrj" href="https://codepen.io/rpsthecoder/full/rKrMrj" target="_blank">here</a></p>
+
+
+<p>The transparent color hides the actual emoji and in its place we see the shadow behind.
+</p>
+<p>You can also use <code>background-clip</code> instead of the above method.
+</p>
+
+<pre><code>.icon {
+  color: transparent;
+  background-color: black;
+  background-clip: text;
+}</code></pre>
+
+<p>With <code>background-clip</code>, if you use gradient backgrounds for the icons, you'll get gradient icons.</p>
+<hr>
+</article>
+</div>
+	
+</body>
+</html>
