@@ -3,7 +3,7 @@ if(!!window.IntersectionObserver){
 	const observer = new IntersectionObserver((entries, observer) => { 
 		entries.forEach(entry => {
 			if(entry.isIntersecting){
-				fetch(entry.target.dataset.pid)
+				fetch(`${entry.target.id}.html`)
 				.then(response => response.text())
 				.catch(() => console.error('Error in fetching the post files'))
 				.then(responsetext => {
@@ -21,5 +21,5 @@ if(!!window.IntersectionObserver){
 			}
 		});
 	});
-	document.querySelectorAll('[data-pid]').forEach(div => { observer.observe(div) });
+	document.querySelectorAll('div.post').forEach(div => { observer.observe(div) });
 }
