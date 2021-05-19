@@ -9,7 +9,12 @@ if(!!window.IntersectionObserver){
 				.then(responsetext => {
 					const html = (domparser.parseFromString(responsetext, 'text/html')).querySelector("article");
 					entry.target.appendChild(html);
-					
+					if('share' in navigator){
+						const button = document.querySelector(`button.share[data-url*="${entry.target.id}"`)
+						const data= {title: button.dataset.title, url: button.dataset.url};
+						button.addEventListener('click', ()=>{navigator.share(data)});
+						button.style.display = 'block';
+					}	
 				})
 				.catch(() => console.error('Error in parsing the posts'));
 				observer.unobserve(entry.target);
