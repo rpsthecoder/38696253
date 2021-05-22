@@ -8,13 +8,7 @@ if(!!window.IntersectionObserver){
 				.catch(() => console.error('Error in fetching the post files'))
 				.then(responsetext => {
 					const html = (domparser.parseFromString(responsetext, 'text/html')).querySelector("article");
-					entry.target.appendChild(html);
-					if('share' in navigator){
-						const button = document.querySelector(`button.share[data-url*="${entry.target.id}"`)
-						const data= {title: button.dataset.title, url: button.dataset.url};
-						button.addEventListener('click', ()=>{navigator.share(data)});
-						button.style.display = 'block';
-					}	
+					entry.target.appendChild(html);	
 				})
 				.catch(() => console.error('Error in parsing the posts'));
 				observer.unobserve(entry.target);
@@ -22,4 +16,11 @@ if(!!window.IntersectionObserver){
 		});
 	});
 	document.querySelectorAll('div.post').forEach(div => { observer.observe(div) });
+}
+
+if('share' in navigator){
+	const button = document.querySelector('button#share')
+	const data= {title: "Preethi Sam", text: "Preethi Sam", url: "https://preethisam.com"};
+	button.addEventListener('click', ()=>{navigator.share(data)});
+	button.style.display = 'block';
 }
