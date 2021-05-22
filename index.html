@@ -72,11 +72,10 @@
 			display: block;
 			margin-top: 50px;
 		}
-		button.share{
+		button#share{
 			display: none;
-			background-color: lime;
+			background: none;
 			width: max-content;
-			border-radius: 3px;
 			font-size: .8em;
 			height: 1.6em;
 			line-height: 1.6em;
@@ -85,8 +84,11 @@
 			cursor: pointer;
 			font-weight: bold;
 			font-family: inherit;
-			color: inherit;
-			margin-top: 40px;
+			color: red;
+			text-decoration: underline;
+			margin: auto;
+			margin-top: -20px;
+			margin-bottom: 20px;
 		}
 	</style>
 </head>
@@ -94,18 +96,13 @@
 	<main>
 		<h1><ruby>PREETHI<rt>🍜</rt><rt>.</rt></ruby></h1>
 		<h5 style="text-align: center; margin-top:-20px;"><a href="https://twitter.com/rpsthecoder" target="_blank">@rpsthecoder</a> in twitter</h5>
+		<button id=share>Share/save my web address</button>
 		<noscript>Enable Javascript in your browser<br><br></noscript>
 		
 		<!-- How to clean and disinfect personal electronics -->
-		<button class=share 
-		data-title="How to clean and disinfect personal electronics" 
-		data-url="https://preethisam.com/index.html#531302">Share this ↓</button>
 		<div id=531302 class=post></div>
 		
 		<!-- How to turn emojis into icons -->
-		<button class=share 
-		data-title="How to turn emojis into icons" 
-		data-url="https://preethisam.com/index.html#924601">Share this ↓</button>
 		<div id=924601 class=post></div>
 		
 		<img width=150px style="margin: auto;display: block;margin-bottom: 30px" src=logo.jpg alt="">
